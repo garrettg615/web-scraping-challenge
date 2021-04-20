@@ -1,0 +1,69 @@
+/* Styling for Mars Web-Scraping index.html */
+
+.container-title {
+    width: 100%;
+    height: 300px;
+    background-color: lightskyblue;
+}
+
+.text-wrapper {
+    font-size: 100px;
+    font-weight: bold;
+    color: gray;
+    text-align: center;
+    padding-top: 50px;
+}
+
+button {
+    width: 160px;
+    height: 50px;
+    margin-left: 45.5%;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color:royalblue;
+}
+
+.row1 {
+    display: flex;
+}
+
+.row2 {
+    display: flex;
+    margin-top: 40px;
+}
+
+.col-md-8 {
+    background-color: springgreen;
+    width: 1000px;
+    height: 400px;
+    margin-left: 25px;
+}
+
+.col-md-4 {
+    background-color: springgreen;
+    width: 700px;
+    height: 400px;
+    margin-left: 30px;
+}
+
+.mars-hemi {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.row3 {
+    display: flex;
+    padding-left: 40px;
+}
+
+.image-container {
+    background-color: salmon;
+    color: black;
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+}
