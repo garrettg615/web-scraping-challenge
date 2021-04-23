@@ -19,12 +19,14 @@
             <div class='row1'>
                 <div class='col-md-12'>
                     <h1>Latest Headlines:</h1>
-                    <p>{{ headlines }}</p>        
+                    <p>{{ mars.headline }}</p>
+                    <p>{{ mars.news }}</p>        
                 </div>
             </div>
             <div class='row2'>
                 <div class='col-md-8'>
                     <h1>Featured Image:</h1> 
+                    <img src='{{ mars.featured_img }}' alt="Mars Featured Image">
 
                 </div>
                 <div class='col-md-4'>
@@ -37,26 +39,30 @@
             </div>
             
             <hr>
-
+            
             <div class='row3'>
                 <div class='col-md-3'>
                     <div class="image-container">
-                        <h1>Image 1:</h1>
+                        <h1>{{ hem1 }}:</h1>
+                        <img src="{{ img1 }}" alt="{{ hem1 }}">
                     </div>        
                 </div>
                 <div class='col-md-3'>
                     <div class="image-container">
-                        <h1>Image 2:</h1>
+                        <h1>{{ hem2 }}:</h1>
+                        <img src="{{ img2 }}" alt="{{ hem2 }}">
                     </div>       
                 </div>
                 <div class='col-md-3'>
                     <div class="image-container">
-                        <h1>Image 3:</h1>
+                        <h1>{{ hem3 }}:</h1>
+                        <img src="{{ img3 }}" alt="{{ hem3 }}">
                     </div>        
                 </div>
                 <div class='col-md-3'>
                     <div class="image-container">
-                        <h1>Image 4:</h1>
+                        <h1>{{ hem4 }}:</h1>
+                        <img src="{{ img4 }}" alt="{{ hem4 }}">
                     </div>        
                 </div>
             </div>

@@ -32,12 +32,6 @@ def scrape_mars_info():
     title_mars = soup.find('div', class_='content_title').text
     para_mars = soup.find('div', class_='article_teaser_body').text
 
-    mars_dict = {
-        'title':title_mars,
-        'descript':para_mars
-        }
-    collection.insert_one(mars_dict)
-
     browser.quit()
 
     # Scrape for Mars Featured image
@@ -53,13 +47,9 @@ def scrape_mars_info():
     html = browser.html
     soup2 = BeautifulSoup(html, 'html.parser')
 
-
     mars_image = soup2.find_all('img')[1]["src"]
     mars_image_path = url2 + mars_image
     
-    mars_dict = {'img_url':mars_image_path}
-    
-    collection.insert_one(mars_dict)
     browser.quit()
 
     # Use Pandas to scrape for Mars Fact Table
@@ -75,12 +65,16 @@ def scrape_mars_info():
     table_file.close()
     
 
+    
+
     # Scrape for Mars Hemisphere Images and Name
 
     executable_path = {'executable_path':'/Users/garrettgomez/.wdm/drivers/chromedriver/mac64/89.0.4389.23/chromedriver'}
     browser = Browser('chrome',**executable_path, headless=False)
     url4 = 'https://marshemispheres.com/'
     
+    mars_hem = []
+    mars_imgs = []
 
     browser.visit(url4)
     time.sleep(1)
@@ -91,23 +85,30 @@ def scrape_mars_info():
 
     for result in results:
         title_text = result.find('a').h3.text
+        mars_hem.append(title_text)
         browser.find_by_text(title_text).first.click()
 
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
 
-        image_info = soup.find('div', class_='description').a['href']
+        image_info = soup.find('div', class_="downloads").ul.li.a['href']
         image_url = url4+image_info
-        mars_dict = {
-            'title':title_text,
-            'image_url':image_url
-        }
+        mars_imgs.append(image_url)
         
-        collection.insert_one(mars_dict)
         browser.back()
 
     browser.quit()
     
     
-    return 'mars info scraped'
+    mars_dict = {
+        'headline':title_mars,
+        'news':para_mars,
+        'featured_img':mars_image_path,
+        'mars_hems':mars_hem,
+        'mars_hem_imgs':mars_imgs
+    }
+
+    collection.insert_one(mars_dict)
+    
+    return mars_dict
 

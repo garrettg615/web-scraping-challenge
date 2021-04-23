@@ -67,3 +67,8 @@ button {
     height: 400px;
     margin-left: 20px;
 }
+
+.image-container img {
+    width:100px;
+    height:100px
+}
