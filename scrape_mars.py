@@ -9,14 +9,6 @@ import pymongo
 
 def scrape_mars_info():
     """Define function to scrape all websites and get information about Mars"""
-
-    conn = 'mongodb://localhost:27017'
-    client = pymongo.MongoClient(conn)
-
-    db = client.mars_db
-    collection = db.mars_data
-
-    collection.drop()
     
 
     # Scrape for Mars headline and paragraph
@@ -58,14 +50,12 @@ def scrape_mars_info():
     tables = pd.read_html(url3)
     mars_facts = tables[1]
     mars_facts.columns = ['Attribute','Spec']
+    mars_table = mars_facts.to_html()
     
     ## Write table to html
-    table_file = open('./templates/mars_table.html','w')
-    table_file.write(mars_facts.to_html())
+    table_file = open('mars_table.html','w')
+    table_file.write(mars_table)
     table_file.close()
-    
-
-    
 
     # Scrape for Mars Hemisphere Images and Name
 
@@ -105,10 +95,9 @@ def scrape_mars_info():
         'news':para_mars,
         'featured_img':mars_image_path,
         'mars_hems':mars_hem,
-        'mars_hem_imgs':mars_imgs
+        'mars_hem_imgs':mars_imgs,
+        'mars_table':mars_table
     }
-
-    collection.insert_one(mars_dict)
     
     return mars_dict
 

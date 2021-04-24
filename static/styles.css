@@ -13,20 +13,34 @@
     text-align: center;
     padding-top: 50px;
 }
-
-button {
-    width: 160px;
+.btn-wrapper {
+    width: 200px;
     height: 50px;
     margin-left: 45.5%;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 30px;
+    align-content: center;
+    border:solid;
+    border-color:black;
+    border-width:2px;
+    background-color: goldenrod;
+}
+a {
+    font-size: 30px;
     font-weight: bold;
-    color: white;
-    background-color:royalblue;
+    color:black; 
+    padding-left: 13px;
+    padding-top: 5px;
+
 }
 
 .row1 {
     display: flex;
+    background-color: lightgrey;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .row2 {
@@ -37,15 +51,33 @@ button {
 .col-md-8 {
     background-color: springgreen;
     width: 1000px;
-    height: 400px;
+    height: 560px;
     margin-left: 25px;
+    padding-left: 100px;
 }
 
 .col-md-4 {
     background-color: springgreen;
     width: 700px;
-    height: 400px;
+    height: 560px;
     margin-left: 30px;
+    padding-left: 50px;
+}
+
+table {
+    background-color: lightgrey;
+    width: 550px;
+    height: 400px;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 20px;
+
 }
 
 .mars-hemi {
@@ -64,11 +96,15 @@ button {
     background-color: salmon;
     color: black;
     width: 400px;
-    height: 400px;
+    height: 550px;
     margin-left: 20px;
 }
 
-.image-container img {
-    width:100px;
-    height:100px
+footer {
+    height: 150px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 145px;
+    padding-right: 10px;
 }
